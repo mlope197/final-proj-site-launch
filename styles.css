@@ -1,0 +1,324 @@
+/* === THEME VARIABLES === */
+:root {
+    --bg: #ffffff;
+    --text: #222222;
+    --accent: #0077cc;
+    --header-bg: #f2f2f2;
+    --card-bg: #f0f0f0;
+    --form-bg: #f9f9f9;
+  }
+  
+  body.dark-mode {
+    --bg: #121212;
+    --text: #eeeeee;
+    --accent: #66ccff;
+    --header-bg: #1e1e1e;
+    --card-bg: #2a2a2a;
+    --form-bg: #1a1a1a;
+  }
+  
+  /* === GLOBAL STYLES === */
+  main{
+    margin: 0 auto; /* This centers it */
+    padding: 0 16px; 
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  section {
+    border: 2px solid gold; /* Light mode default */
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+  }
+  
+  /* Dark mode override */
+  .dark-mode section {
+    border-color: green;
+  }
+  
+  /* === HEADER === */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* ensures it stays above other content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background: var(--header-bg);
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .logo {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+  }
+  
+  nav a {
+    margin-left: 24px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  nav a:hover {
+    color: var(--accent);
+  }
+  
+  html{
+    scroll-behavior: smooth;
+  }
+
+  /* === DARK MODE TOGGLE === */
+  #darkToggle {
+    margin-left: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
+  /* === HERO SECTION === */
+  .hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .hero-text {
+    flex: 1;
+    min-width: 250px;
+  }
+  .hero {
+    background: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+  
+  .hero ul {
+    margin: 0;
+    padding: 0 0 16px 16px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    max-width: 600px;
+  }
+  
+  /* === VALUES SECTION === */
+  .values {
+    padding: 64px 48px;
+    background: var(--bg);
+    text-align: center; /* 💡 Add this to center all inline content inside */
+  }
+  
+  .values h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  .values p {
+    max-width: 700px;
+    line-height: 1.6;
+    margin: 16px auto;
+    text-align: center; /* Add this to center the actual paragraph text */
+
+  }
+  
+  .value-boxes {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .value {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center; /* Center all text inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*  Center image and elements horizontally */
+  }
+  
+  .value h3 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+  .value-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .action-button {
+    margin-top: 32px;
+    padding: 14px 28px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-button:hover {
+    background-color: #005fa3; /* a bit darker than --accent */
+  }
+  
+  /* TABS SECTION */
+  .projects {
+    padding: 64px 48px;
+    background: var(--card-bg);
+    text-align: center;
+  }
+  
+  .projects h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+  /* Carousel Section */
+  .carousel .tabs-img {
+    width: 100%;              /* Make image fill its container */
+    height: auto;             /* Keep aspect ratio */
+    max-height: 400px;        /* Limit height */
+    object-fit: cover;        /* Crop instead of stretching */
+    border-radius: 10px;      /* Rounded corners for a friendly look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .carousel .tabs-img:hover {
+    transform: scale(1.03);   /* Slight zoom on hover */
+  }
+  
+  .carousel div {
+    padding: 10px;            /* Space between slides */
+    box-sizing: border-box;
+  }
+
+  .carousel-section {
+    padding: 64px 48px;
+    background: var(--card-bg); /* Matches the value cards or hero section */
+    text-align: center;
+  }
+  
+  .carousel-section h2 {
+    font-size: 28px;
+    margin-bottom: 32px;
+  }
+
+/* setting a fixed height for carousel not pics */
+  .carousel {
+    max-height: 500px; /* Adjust this value as needed */
+    overflow: hidden;
+  }
+
+  /* .carousel img {
+    max-height: 280px;
+    object-fit: cover;
+  } */
+
+  /* === CONTACT SECTION === */
+  .contact {
+    padding: 64px 48px;
+    background: var(--form-bg);
+    text-align: center; /* center the text */
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+  }
+  .contact form {
+    max-width: 600px;
+    width: 100%;
+  }
+  .contact h2 {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: var(--form-bg);
+    color: var(--text);
+    border: 1px solid #444;
+    border-radius: 8px;
+  }
+  
+  form textarea {
+    height: 120px;
+  }
+  
+  form button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  form button:hover {
+    background-color: darken(var(--accent), 10%);
+  }
+  
+  /* === FOOTER === */
+  footer {
+    background: var(--header-bg);
+    padding: 32px 48px;
+    text-align: center;
+  }
+  
+  footer .socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+  }
+  
+  footer .socials a:hover {
+    color: var(--accent);
+  }
